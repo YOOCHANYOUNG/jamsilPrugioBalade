@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<meta name="naver-site-verification" content="af1e0601a0ef22b8d686b107fc276d253bfd6fec" />
+	<meta name="description" content="방이동 푸르지오 발라드">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="방이동 푸르지오 발라드">
+	<meta property="og:description" content="방이동 푸르지오 발라드">
+	<meta property="og:image" content="https://sangbongthesharpfirstworld.netlify.app/main_img_main.png">
+	<meta property="og:url" content="https://sangbongthesharpfirstworld.netlify.app/">
+
+	<link rel="stylesheet" href="./assets/css/main.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+	<title>방이동 푸르지오 발라드</title>
+</head>
+
+<body class="container">
+	
+	<!-- 상단 로고 영역 -->
+	<div class="top_logo">
+		<div>
+			<img src="./images/top_logo.png" alt="로고" id="logoImage">
+		</div>
+		<!-- 사이드메뉴 버튼 영역 -->
+		<div id="sideMenuArea">
+			<div id="sideMenuIcon">≣</div>
+		</div>
+	</div>
+
+	<!-- 사이드메뉴 -->
+	<div id="sideMenu" class="side-menu">
+		<div class="side-menu-content">
+			<ul>
+				<li><a href="./index.html">홈</a></li>
+				<li><a href="./menuSide1.html">사업개요</a></li>
+				<li><a href="./menuSide2.html">입지환경</a></li>
+				<li><a href="./menuSide3.html">배치도</a></li>
+				<li><a href="./menuSide4.html">타입안내</a></li>
+				<li><a href="./menuSide5.html">상품특화</a></li>
+				<li><a href="./menuSide6.html">개발환경</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 배경 클릭 시 메뉴 닫기 -->
+	<div id="overlay" class="overlay"></div>
+
+
+	<!-- 상단 문구 영역 -->
+	<div class="top_ment">
+		<div id="top_ment_one">잔여호실 파격조건!</div>
+		<div>
+			즉시입주 가능 & 상업시설 동시 분양
+			<!-- <img src="./images/top_ment_img1.png" alt="종로엠스쿨"> 
+			<img src="./images/top_ment_img2.png" alt="덕계역">
+			<img src="./images/top_ment_img3.png" alt="GTX-C 덕정역(계획)">
+			<img src="./images/top_ment_img4.png" alt="리치마트"> -->
+		</div>
+	</div>
+
+	<!-- 투시도(메인이미지) 영역 -->
+	 <div class="main_img">
+		<div>
+			<img src="./images/main_img_main.png" alt="메인">
+		</div>
+		<div>
+			<img src="./images/bangmun-1.png" alt="방문예약">
+		</div>
+	 </div>
+
+	<!-- 메인 문구 영역 -->
+	<div class="main_ment">
+		<div>
+			<div>선착순 분양중!</div>
+			<div>방이동 먹자골목 워라벨 상권</div>
+		</div>
+		<!-- <div id="call1">
+			<div>강북의 똘똘한 한채 투자 1순위</div>
+			<div>1 5 3 3 - 2 0 4 2</div>
+		</div> -->
+	</div>
+
+	<!-- 메인 메뉴 영역 -->
+	<div class="main_menu">
+		<div>
+			<div data-url="./menuSide1.html">
+				<img src="./images/main_menu100.png" alt="사업개요">
+				<div>사 업 개 요</div>
+			</div>
+			<div data-url="./menuSide2.html">
+				<img src="./images/main_menu200.png" alt="입지환경">
+				<div>입 지 환 경</div>
+			</div>
+			<div data-url="./menuSide3.html">
+				<img src="./images/main_menu300.png" alt="배치도">
+				<div>배 치 도</div>
+			</div>
+		</div>
+		<div>
+			<div data-url="./menuSide4.html">
+				<img src="./images/main_menu400.png" alt="타입안내">
+				<div>타 입 안 내</div>
+			</div>
+			<div data-url="./menuSide5.html">
+				<img src="./images/main_menu500.png" alt="상품특화">
+				<div>상 품 특 화</div>
+			</div>
+			<div data-url="./menuSide6.html">
+				<img src="./images/main_menu600.png" alt="개발환경">
+				<div>개 발 환 경</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 메인 하단(방문신청예약) 영역 -->
+	<div class="main_foot">
+		<div> ⬇ 방 문 신 청 예 약 하 기 ⬇ </div>
+		
+		<!-- 방문 신청 예약폼 영역 -->
+		<div>
+			<div>
+				<label for="name" id="nameInput">이름</label>
+				<input type="text" id="name" placeholder="이름을 입력하세요">
+			</div>
+
+			<div>
+				<label for="phone" id="phoneInput">전화번호</label>
+				<input type="tel" id="phone" placeholder="전화번호를 입력하세요">
+			</div>
+
+			<!-- 개인정보 수집 동의 -->
+			<div class="privacy_agree">
+				<div>
+					<input type="checkbox" id="privacy_check">
+					<label for="privacy_check">개인정보 수집·이용에 동의합니다.</label>
+					<a href="#" id="open_privacy">[자세히 보기]</a>
+				</div>
+			</div>
+
+			<button type="button" class="reserve_btn">예 약 하 기</button>
+		</div>
+	</div>
+
+	<!-- 개인정보 수집·이용 모달 -->
+	<div id="privacy_modal" class="modal">
+		<div class="modal_content">
+			<span class="close">&times;</span>
+			<h2>개인정보 수집·이용 안내</h2>
+			<p>본 사이트는 방문 예약을 위해 최소한의 개인정보를 수집·이용합니다.</p>
+			<ul>
+				<li>수집 항목: 이름, 전화번호</li>
+				<li>이용 목적: 방문 예약 및 안내</li>
+				<li>보유 기간: 예약 후 3일이내 파기</li>
+			</ul>
+			<p>자세한 내용은 관리자에게 문의해 주세요.</p>
+		</div>
+	</div>
+
+	<!-- 메인 하단 이미지(광역위치도) 영역 -->
+	<div class="main_foot_img">
+		<img src="./images/main_foot_img.png" alt="광역위치도" id="mapImg">
+		<div>클릭 시 '네이버 지도' 연결 됩니다.</div>
+	</div>
+
+	<!-- 메인 하단 글씨 영역 -->
+	<div class="main_foot_text">
+		<div>잠실역(2,8호선) | 송파나루역(9호선) | 롯데타워 | 롯데월드</div>
+	</div>
+
+	<!-- 하단 푸터(정보) 영역 -->
+	<div class="foot_info">
+		<div>Jamsil Bang-i-dong Prugio Balade Ad.</div>
+		<div>[ Site made by Chan Young ]</div>
+		<div>Designed by Chan Young and released under the Creative Commons License.</div>
+	</div>
+
+	<!-- 하단 푸터 전화/문자 영역 -->
+	<div class="foot_callMsg">
+		<div id="call2"><span><i class="fas fa-phone-alt"></i>&nbsp;</span>&nbsp;전화</div>
+		<div id="msg"><span><i class="fas fa-comment-dots"></i>&nbsp;</span>&nbsp;문자</div>
+	</div>
+
+	<script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>

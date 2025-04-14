@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="naver-site-verification" content="af1e0601a0ef22b8d686b107fc276d253bfd6fec" />
+    <meta name="description" content="방이동 푸르지오 발라드">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="방이동 푸르지오 발라드">
+    <meta property="og:description" content="방이동 푸르지오 발라드">
+	<meta property="og:image" content="https://sangbongthesharpfirstworld.netlify.app/main_img_main.png">
+	<meta property="og:url" content="https://sangbongthesharpfirstworld.netlify.app/">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>방이동 푸르지오 발라드-사업개요</title>
+
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, rgb(15, 44, 68), rgb(10, 30, 50), rgb(5, 20, 35));
+            color: #ccc;
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 80px - 60px);
+        }
+
+        /* 헤더 스타일 */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+            color: #fff;
+            position: relative;
+            height: auto;
+            gap: 1px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        /* 로고이미지 크기 */
+        #logoImage {
+            width: 330px;
+            height: 85px;
+            border-radius: 10px;
+            /* border: 4px solid #e74c3c; */
+            /* 빨간색 테두리 */
+        }
+
+        @media (max-width: 768px) {
+            #logoImage {
+                width: 250px;
+                height: 65px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #logoImage {
+                width: 200px;
+                height: 55px;
+            }
+        }
+
+        /* 사이드메뉴 버튼영역 */
+        #sideMenuArea {
+            display: flex;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #sideMenuIcon {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #fff;
+            /* 흰색 아이콘 */
+            background: linear-gradient(to bottom, rgb(15, 44, 68), rgb(10, 30, 50), rgb(5, 20, 35));
+            /* 어두운 배경 */
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            #sideMenuIcon {
+                font-size: 30px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #sideMenuIcon {
+                font-size: 25px;
+                padding: 6px;
+            }
+        }
+
+        /* 오른쪽 사이드 메뉴 스타일 */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(135deg, #333, #444);
+            /* 어두운 그라데이션 배경 */
+            color: #fff;
+            transition: right 0.3s ease-in-out;
+            z-index: 10000;
+            box-shadow: -4px 0 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 사이드 메뉴가 열렸을 때 */
+        .side-menu.open {
+            right: 0;
+        }
+
+        .side-menu-content {
+            padding: 20px;
+        }
+
+        .side-menu-content ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 60px;
+        }
+
+        .side-menu-content ul li {
+            margin: 15px 0;
+            font-size: 20px;
+            transition: background-color 0.2s, transform 0.2s;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .side-menu-content ul li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* 밝은 회색 호버 효과 */
+            transform: translateX(-5px);
+        }
+
+        .side-menu-content ul li a {
+            color: #ccc;
+            /* 텍스트 색상 회색 */
+            text-decoration: none;
+            display: block;
+        }
+
+        /* 오버레이 스타일 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            /* 어두운 오버레이 */
+            visibility: hidden;
+            transition: visibility 0.3s ease-in-out;
+            z-index: 5000;
+        }
+
+        /* 갤러리 스타일 */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            /* background: linear-gradient(to bottom, rgb(15, 44, 68), rgb(10, 30, 50), rgb(5, 20, 35)); */
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            flex-grow: 1;
+        }
+
+        .gallery img {
+            width: 90%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* 푸터 스타일 */
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 3px;
+            margin-top: 7.5px;
+            color: gray;
+            font-size: 15px;
+            gap: 5px;
+            margin-bottom: 40px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        /* Footer 전체 영역 스타일 */
+        .footers {
+            /* background: linear-gradient(to bottom, rgb(15, 44, 68), rgb(10, 30, 50), rgb(5, 20, 35)); */
+            padding: 20px;
+            text-align: center;
+            color: #ECF0F1;
+            border-top: 3px solid #ECF0F1;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: -25px;
+        }
+
+        /* 뒤로가기 버튼 스타일 */
+        .footers .back-button {
+            background-color: #ffad33;
+            /* 고급스러운 빨간색 */
+            color: black;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footers .back-button:hover {
+            background-color: #c0392b;
+            /* 어두운 빨간색 */
+        }
+
+        /* 하단 텍스트 스타일 */
+        .footers p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .footers {
+                padding: 15px;
+            }
+
+            .footers .back-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .footers p {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .footers {
+                padding: 18px;
+            }
+
+            .footers .back-button {
+                padding: 11px 22px;
+                font-size: 15px;
+            }
+
+            .footers p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 상단 로고 영역 -->
+    <div class="top_logo">
+        <div id="sideMenuArea">
+            <div id="sideMenuIcon">≣</div>
+        </div>
+    </div>
+
+    <!-- 사이드메뉴 -->
+    <div id="sideMenu" class="side-menu">
+        <div class="side-menu-content">
+            <ul>
+                <li><a href="./index.html">홈</a></li>
+                <li><a href="./menuSide1.html">사업개요</a></li>
+                <li><a href="./menuSide2.html">입지환경</a></li>
+                <li><a href="./menuSide3.html">배치도</a></li>
+                <li><a href="./menuSide4.html">타입안내</a></li>
+                <li><a href="./menuSide5.html">상품특화</a></li>
+                <li><a href="./menuSide6.html">개발환경</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 배경 클릭 시 메뉴 닫기 (중복된 overlay 제거) -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- 헤더 -->
+    <div class="header">
+        <div>
+            <img src="./images/top_logo.png" alt="로고" id="logoImage">
+        </div>
+        <h1>[ 사 업 개 요 ]</h1>
+    </div>
+
+    <!-- 갤러리 -->
+    <div class="gallery">
+        <img src="./images/main_menu100.png" alt="사업개요 추가 이미지 1">
+        <!-- <img src="./images/main_menu101.png" alt="사업개요 추가 이미지 2"> -->
+    </div>
+
+    <!-- 하단 푸터 -->
+    <div class="footer">
+		<div>Jamsil Bang-i-dong Prugio Balade Ad.</div>
+		<div>[ Site made by Chan Young ]</div>
+		<div>Designed by Chan Young and released under the Creative Commons License.</div>
+    </div>
+
+    <!-- 뒤로가기 버튼 -->
+    <div class="footers">
+        <button class="back-button" onclick="window.history.back();">뒤로 가기</button>
+        <p>&copy; 방이동 푸르지오 발라드. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        // 사이드메뉴 열기/닫기 기능
+        const sideMenuIcon = document.getElementById('sideMenuIcon');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+
+        // 메뉴 아이콘 클릭 시 토글
+        sideMenuIcon.addEventListener('click', (event) => {
+            event.stopPropagation();
+            sideMenu.classList.toggle('open');
+            overlay.style.visibility = sideMenu.classList.contains('open') ? 'visible' : 'hidden';
+        });
+
+        // 사이드메뉴 내부 클릭 시 이벤트 전파 차단
+        sideMenu.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        // 문서 전체 클릭 시 메뉴 닫기
+        document.addEventListener('click', () => {
+            if (sideMenu.classList.contains('open')) {
+                sideMenu.classList.remove('open');
+                overlay.style.visibility = 'hidden';
+            }
+        });
+
+        // 오버레이 클릭 시에도 메뉴 닫기
+        overlay.addEventListener('click', () => {
+            sideMenu.classList.remove('open');
+            overlay.style.visibility = 'hidden';
+        });
+
+        // 상단 메인 로고 클릭시 홈으로 이동
+        // DOMContentLoaded 이벤트로 DOM 요소가 모두 로드된 후 실행되도록 합니다.
+        document.addEventListener('DOMContentLoaded', function () {
+            // id가 "logoImage"인 이미지 요소를 선택합니다.
+            const logoImage = document.getElementById('logoImage');
+
+            // 이미지에 마우스 커서를 pointer로 변경하여 클릭 가능한 UI임을 표시합니다.
+            logoImage.style.cursor = 'pointer';
+
+            // 이미지에 클릭 이벤트 리스너를 추가합니다.
+            logoImage.addEventListener('click', function () {
+                // 원하는 링크로 이동합니다. 아래 URL을 원하는 링크로 변경하세요.
+                window.location.href = './index.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

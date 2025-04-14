@@ -1,0 +1,1138 @@
+/* 기본(기준) CSS */
+body{
+	margin: 0 auto;
+	width: auto;
+	color: black;
+	padding: 10px;
+
+	box-sizing: border-box;
+	border: 1px solid black;
+
+	/* 배경! */
+    background: linear-gradient(to bottom, rgb(15, 44, 68), rgb(10, 30, 50), rgb(5, 20, 35));
+
+	/* 폰트! */
+	font-family: 'Pretendard', sans-serif;
+}
+
+/* 상단 로고 영역 */
+.top_logo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	padding: 2.5px;
+	width: auto;
+	height: 100px;
+}
+
+/* 로고이미지크기 */
+#logoImage{
+	width: 330px;
+	height: 85px;
+	border-radius: 15px;
+	/* border: 4px solid #2d4a2d; */
+	object-fit: contain; /* 이미지 크기에 맞게 자동 조정 */
+}
+
+/* 사이드메뉴버튼영역 */
+#sideMenuArea{
+	display: flex;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+#sideMenuIcon{
+	position: absolute;
+	top: 25px;
+	right: 40px;
+	width: 50px;
+	height: 50px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #ffad33;
+}
+
+@media screen and (max-width: 1065px) and (min-width: 801px) { /* 태블릿 화면 */
+    .top_logo {
+        height: 80px;  /* 높이를 줄임 */
+    }
+    
+    #logoImage {
+        width: 280px;  /* 로고 이미지 크기 줄임 */
+        height: 75px;
+    }
+
+    #sideMenuIcon {
+        top: 20px;  /* 메뉴 아이콘 상단 위치 조정 */
+        right: 35px; /* 오른쪽 위치 조정 */
+        width: 45px;  /* 메뉴 아이콘 크기 줄임 */
+        height: 45px;
+        font-size: 35px;  /* 폰트 크기 줄임 */
+    }
+}
+
+@media screen and (max-width: 800px) { /* 핸드폰 화면 */
+    .top_logo {
+        height: 70px;  /* 높이를 더 줄임 */
+        padding: 0px;  /* 패딩 줄임 */
+    }
+
+    #logoImage {
+        width: 250px;  /* 로고 크기 줄임 */
+        height: 65px;
+    }
+
+    #sideMenuIcon {
+        top: 15px;  /* 메뉴 아이콘 상단 위치 더 줄임 */
+        right: 30px; /* 오른쪽 위치 줄임 */
+        width: 40px;  /* 메뉴 아이콘 크기 줄임 */
+        height: 40px;
+        font-size: 30px;  /* 폰트 크기 줄임 */
+    }
+}
+
+@media screen and (max-width: 480px) { /* 더 작은 화면 (모바일) */
+    .top_logo {
+        height: 60px;  /* 더욱 줄임 */
+        padding: 0px;  /* 패딩 최소화 */
+    }
+
+    #logoImage {
+        width: 200px;  /* 로고 크기 더 줄임 */
+        height: 55px;
+    }
+
+    #sideMenuIcon {
+        top: 10px;  /* 메뉴 아이콘 상단 위치 더 줄임 */
+        right: 20px; /* 오른쪽 위치 더 줄임 */
+        width: 35px;  /* 메뉴 아이콘 크기 더 줄임 */
+        height: 35px;
+        font-size: 25px;  /* 폰트 크기 줄임 */
+    }
+}
+
+
+
+
+
+/* 사이드 메뉴 스타일 */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* 메뉴가 화면 밖에 숨겨짐 */
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(135deg, #ffad33, #d98e1f, #a0662c, #4a3b2d, #1c1c1c);
+
+    color: white;
+    transition: right 0.3s ease-in-out;
+    z-index: 10000; /* 다른 요소보다 위에 표시 */
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+}
+/* 사이드 메뉴가 열렸을 때 */
+.side-menu.open {
+    right: 0;
+}
+.side-menu-content {
+    padding: 20px;
+}
+
+.side-menu-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 60px;
+}
+.side-menu-content ul li {
+    margin: 15px 0;
+    font-size: 20px; /* 글씨 크기 조정 */
+    transition: background-color 0.2s, transform 0.2s;
+    padding: 10px;
+    border-radius: 5px;
+	font-weight: bold;
+    cursor: pointer; /* 커서 포인터 */
+}
+.side-menu-content ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+.side-menu-content ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+}
+/* 오버레이 스타일 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    transition: visibility 0.3s ease-in-out;
+    z-index: 5000; /* 사이드메뉴보다 낮은 z-index */
+}
+
+
+
+
+/* 상단 문구 영역 */
+.top_ment{
+	margin: 0 auto;
+	width: auto;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	margin-top: 2.5px;
+	gap: 3px;
+    color: #ffad33;
+}
+#top_ment_one{
+    color: #ffad33;
+}
+.top_ment > :nth-child(n){
+	font-size: 28px;
+	font-weight: bold;
+	width: auto;
+	height: 38px;
+	padding: 3px;
+}
+.top_ment > :nth-child(1) {
+    /* color: #1f4d1f; */
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #4e8a4e 0%, #2d572c 100%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    /* animation: textGlow 1.5s infinite alternate ease-in-out; */
+}
+/* 부드러운 빛나는 효과 */
+@keyframes textGlow {
+    0% {
+        text-shadow: 2px 2px 10px rgba(0, 100, 0, 0.2);
+    }
+    100% {
+        text-shadow: 2px 2px 15px rgba(0, 100, 0, 0.5);
+    }
+}
+.top_ment > :nth-child(2){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	margin-top: 7.5px;
+}
+.top_ment > :nth-child(2) > :nth-child(1),
+.top_ment > :nth-child(2) > :nth-child(2),
+.top_ment > :nth-child(2) > :nth-child(3),
+.top_ment > :nth-child(2) > :nth-child(4)
+{
+	width: 200px;
+	height: 45px;
+	margin-top: 5px;
+	border-radius: 10px;
+}
+/* 태블릿 화면 (800px ~ 1065px) */
+@media screen and (max-width: 1065px) and (min-width: 801px) {
+    .top_ment > :nth-child(1) {
+        font-size: 30px;  /* 폰트 크기 줄임 */
+    }
+
+    .top_ment > :nth-child(2) {
+        gap: 20px; /* 버튼 간격 줄임 */
+        font-size: 32px;
+    }
+
+    .top_ment > :nth-child(2) > :nth-child(1),
+    .top_ment > :nth-child(2) > :nth-child(2),
+    .top_ment > :nth-child(2) > :nth-child(3),
+    .top_ment > :nth-child(2) > :nth-child(4) {
+        width: 140px;  /* 버튼 크기 줄임 */
+        height: 40px;
+    }
+}
+
+/* 모바일 화면 (800px 이하) */
+@media screen and (max-width: 800px) {
+    .top_ment {
+        height: auto;  /* 높이 자동으로 조정 */
+    }
+
+    .top_ment > :nth-child(1) {
+        font-size: 26px;  /* 폰트 크기 줄임 */
+    }
+
+    .top_ment > :nth-child(2) {
+        gap: 10px; /* 버튼 간격 더 줄임 */
+        font-size: 28px;
+    }
+
+    .top_ment > :nth-child(2) > :nth-child(1),
+    .top_ment > :nth-child(2) > :nth-child(2),
+    .top_ment > :nth-child(2) > :nth-child(3),
+    .top_ment > :nth-child(2) > :nth-child(4) {
+        width: 100px;  /* 버튼 크기 더 줄임 */
+        height: 35px;
+        font-size: 12px;  /* 글씨 크기도 줄임 */
+    }
+}
+
+/* 작은 화면 (480px 이하) */
+@media screen and (max-width: 480px) {
+	.top_ment{
+		gap: 0px;
+	}
+
+    .top_ment > :nth-child(1) {
+        font-size: 19px;  /* 폰트 크기 더 줄임 */
+    }
+
+    .top_ment > :nth-child(2) {
+		margin-top: -20px;
+        gap: 12px; /* 버튼 간격 최소화 */
+        font-size: 19px;
+    }
+
+    .top_ment > :nth-child(2) > :nth-child(1),
+    .top_ment > :nth-child(2) > :nth-child(2),
+    .top_ment > :nth-child(2) > :nth-child(3),
+    .top_ment > :nth-child(2) > :nth-child(4) {
+        width: 80px;  /* 버튼 크기 최소화 */
+        height: 30px;
+        font-size: 10px;  /* 글씨 크기 최소화 */
+    }
+}
+
+
+
+
+/* 메인이미지(투시도) 영역 */
+.main_img{
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative; /* 절대 위치를 위한 relative 설정 */
+	width: 100%;  /* 부모 영역에 맞게 width 100%로 설정 */
+	height: 100%;
+	padding: 1px;
+	margin-top: 3px;
+}
+.main_img > :nth-child(1){
+    width: 100%; /* 부모 영역에 맞게 가로 크기 설정 */
+    height: auto; /* 세로 비율에 맞게 자동 조정 */
+    max-width: 1590px;  /* 최대 크기 제한 */
+}
+.main_img > :nth-child(1) > img{
+    width: 100%; /* 이미지 크기 자동 조정 */
+    max-height: 550px; /* 비율에 맞게 자동으로 세로 크기 설정 */
+	border-radius: 15px;
+	margin-top: 10px;
+}
+.main_img > :nth-child(2) > img {
+    position: absolute;
+    top: 5%;  /* 화면 가운데 위치 */
+    right: 8.7%;  /* 오른쪽에 배치 */
+    width: 10vw; /* 뷰포트 크기에 비례하여 크기 조정 */
+    height: 10vw; /* 비율을 맞춰서 크기 조정 */
+    max-width: 125px; /* 최대 크기 제한 */
+    max-height: 125px; /* 최대 크기 제한 */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(16, 17, 29, 0.7); /* 부드러운 그림자 */
+    animation: pulseEffect 1.5s infinite alternate; /* 깜빡이는 효과 */
+}
+/* 깜빡이는 애니메이션 */
+@keyframes pulseEffect {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(16, 17, 29, 0.7);
+    }
+    100% {
+        transform: scale(1.1); /* 이미지가 커짐 */
+        box-shadow: 0 0 25px rgba(16, 17, 29, 0.7);
+    }
+}
+/* 화면 크기별 반응형 */
+@media screen and (max-width: 1065px) {
+    .main_img > :nth-child(1) {
+        width: 90%; /* 화면 크기에 맞게 이미지 크기 조정 */
+    }
+
+    .main_img > :nth-child(2) > img {
+        width: 12vw; /* 뷰포트 크기에 비례한 크기 */
+        height: 12vw; /* 비율에 맞게 조정 */
+        max-width: 110px; /* 최대 크기 제한 */
+        max-height: 110px; /* 최대 크기 제한 */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main_img > :nth-child(1) {
+        width: 100%; /* 작은 화면에서 이미지 크기 자동 조정 */
+    }
+
+    .main_img > :nth-child(2) > img {
+        width: 15vw; /* 더 작은 화면에서 크기 조정 */
+        height: 15vw;
+        top: 6%;
+        right: 3%;
+        max-width: 100px;
+        max-height: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main_img > :nth-child(1) {
+        width: 100%; /* 작은 화면에서 이미지 크기 최대로 */
+    }
+
+    .main_img > :nth-child(2) > img {
+        width: 20vw; /* 매우 작은 화면에서 크기 비례 조정 */
+        height: 20vw;
+        top: 10%;
+        right: 4%;
+        max-width: 50px;
+        max-height: 50px;
+    }
+}
+
+
+
+
+
+
+/* 메인 문구 영역 */
+.main_ment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+    height: 150px;
+    padding: 3px;
+    margin-top: 3px;
+    gap: 10px; /* 각 블록 간 간격 조정 */
+}
+
+/* 각각의 블록 스타일 */
+.main_ment > :nth-child(n) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 755px;
+    height: 125px;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 3px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 부드러운 그림자 효과 */
+}
+
+/* 첫 번째 블록 - 선착순 분양 */
+.main_ment > :nth-child(1) {
+    border: 4px solid #c62828; /* 좀 더 고급스러운 레드 계열 */
+    background: linear-gradient(to bottom, #fff5f5, #ffe0e0); /* 부드러운 붉은 계열 */
+}
+
+/* 첫 번째 블록 - 첫 번째 문구 */
+.main_ment > :nth-child(1) > :nth-child(1) {
+    color: #b71c1c; /* 좀 더 진한 레드 */
+    text-shadow: 1px 1px 3px rgba(183, 28, 28, 0.3); /* 미세한 그림자 */
+}
+
+/* 두 번째 블록 - 방문예약 */
+.main_ment > :nth-child(2) {
+    border: 4px solid #1565c0; /* 고급스러운 블루 계열 */
+    background: linear-gradient(to bottom, #f0f8ff, #d0e8ff); /* 은은한 블루 계열 */
+}
+
+/* 두 번째 블록 - 전화번호 강조 */
+.main_ment > :nth-child(2) > :nth-child(2) {
+    font-size: 35px;
+    color: #0d47a1; /* 더 깊은 블루 */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(13, 71, 161, 0.3);
+}
+
+
+/* 이게 진짜 main_ment */
+.main_ment > :nth-child(1) {
+    border: 4px solid #ffad33; /* 선명한 골드 */
+    background: linear-gradient(to bottom, #222222, #4d3b09); /* 어두운 블랙-골드 조합 */
+}
+/* 첫 번째 블록 - 첫 번째 문구 */
+.main_ment > :nth-child(1) > :nth-child(1) {
+    color: #ffad33; /* 밝은 골드 */
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(255, 204, 0, 1), 0 0 12px rgba(255, 255, 255, 0.8); /* 빛나는 효과 */
+}
+.main_ment > :nth-child(1) > :nth-child(2) {
+    color: #ffad33; /* 밝은 골드 */
+}
+.main_ment > :nth-child(2) {
+    border: 4px solid #00e5ff; /* 밝은 네온 블루 */
+    background: linear-gradient(to bottom, #222222, #003366); /* 어두운 블랙-블루 조합 */
+}
+/* 두 번째 블록 - 전화번호 강조 */
+.main_ment > :nth-child(2) > :nth-child(2) {
+    font-size: 35px;
+    color: #a8e6ff; /* 밝은 하늘색 */
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(51, 204, 255, 1), 0 0 12px rgba(255, 255, 255, 0.8); /* 네온 효과 */
+}
+.main_ment > :nth-child(2) > :nth-child(1) {
+    font-size: 1.5em;
+    color: #a8e6ff; /* 밝은 하늘색 */
+}
+
+
+
+
+#call1{
+	/* cursor: pointer; */
+}
+/* 작은 화면에서 글자 크기 조정 */
+@media screen and (max-width: 768px) {
+    .main_ment > :nth-child(n) {
+        font-size: 18px; /* 화면이 작을수록 글자 크기 조정 */
+    }
+
+    .main_ment > :nth-child(1) {
+        padding: 10px; /* 더 작은 여백 */
+    }
+
+    .main_ment > :nth-child(2) {
+        padding: 10px; /* 더 작은 여백 */
+    }
+}
+
+/* 더 작은 화면에서 글자 크기 및 간격 조정 */
+@media screen and (max-width: 480px) {
+    .main_ment{
+        flex-direction: column;
+        width: 92%;
+        margin-top: -15px;
+        margin-bottom: 120px;
+    }
+
+    .main_ment > :nth-child(n) {
+        font-size: 14px; /* 글자 크기 더 축소 */
+        gap: 10px; /* 간격 더 좁힘 */
+    }
+
+    .main_ment > :nth-child(1) {
+        width: 100%; /* 가로 너비를 100%로 조정 */
+		height: 40%;
+        /* margin-top: -95px; */
+        font-size: 1.5em;
+    }
+
+    .main_ment > :nth-child(2) {
+        width: 100%; /* 가로 너비를 100%로 조정 */
+		height: 40%;
+        margin-bottom: 115px;
+    }
+
+    .main_ment > :nth-child(2) > :nth-child(2) {
+        font-size: 22px; /* 전화번호 글자 크기 축소 */
+    }
+}
+
+
+
+
+
+/* 메인 메뉴 영역 */
+.main_menu{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 3px;
+	margin-top: 3px;
+	width: auto;
+	height: 625px;
+    color: whitesmoke;
+}
+.main_menu > :nth-child(n){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: auto;
+	height: 285px;
+	padding: 2px;
+	gap: 95px;
+	margin: 10px 0;
+}
+.main_menu > :nth-child(n) > :nth-child(n){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	padding: 2px;
+	/* width: 500px; */
+	max-width: 500px; /* 각 항목의 최대 너비 설정 */
+	height: 285px;
+	cursor: pointer;
+}
+.main_menu > :nth-child(n) > :nth-child(n) > :nth-child(n){
+	/* border: 1px solid red; */
+}
+.main_menu > :nth-child(n) > :nth-child(n) > :nth-child(1){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 385px;
+	height: 79%;
+	border-radius: 10px 10px 0 0;
+	border: 2.5px solid gray;
+	margin: 0 auto;
+}
+.main_menu > :nth-child(n) > :nth-child(n) > :nth-child(2){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 385px;
+	height: 21%;
+	border-bottom: 2.5px solid gray;
+	border-left: 2.5px solid gray;
+	border-right: 2.5px solid gray;
+	font-size: 22px;
+	font-weight: bold;
+	border-radius: 0 0 5px 5px;
+}
+/* 반응형 스타일 - 화면 크기가 1024px 이하일 때 */
+@media (max-width: 1024px) {
+    /* 화면 크기가 1024px 이하일 때 메뉴 아이템 배치 변경 */
+    .main_menu {
+        height: auto;
+		margin-top: -80px;
+    }
+
+    .main_menu > :nth-child(n) {
+        gap: 25px;
+        margin: 270px 0;
+    }
+
+    .main_menu > :nth-child(n) > :nth-child(n) {
+        max-width: 100%; /* 너비 100%로 설정 */
+        width: 90%; /* 화면 크기에 맞춰 너비 90%로 설정 */
+        height: 250px; /* 높이 조정 */
+    }
+
+    .main_menu > :nth-child(n) > :nth-child(n) > :nth-child(1),
+    .main_menu > :nth-child(n) > :nth-child(n) > :nth-child(2) {
+        width: 100%;
+        margin: 10px auto;
+    }
+}
+/* . */
+/* 반응형 스타일 - 화면 크기가 600px 이하일 때 */
+@media (max-width: 600px) {
+    .main_menu {
+        height: auto;
+		margin-top: -190px;
+    }
+    /* 화면 크기가 600px 이하일 때 메뉴 아이템 세로 배치 */
+    .main_menu > :nth-child(n) {
+        flex-direction: column; /* 세로로 배치 */
+        gap: 5px; /* 간격 줄이기 */
+    }
+    .main_menu > :nth-child(1) {
+        margin-bottom: 187px
+    }
+    .main_menu > :nth-child(2) {
+        /* gap: 30px; */
+    }
+
+    .main_menu > :nth-child(n) > :nth-child(n) {
+        max-width: 100%; /* 너비 100%로 설정 */
+        width: 100%; /* 화면 크기에 맞춰 너비 100% */
+        height: 260px; /* 높이 조정 */
+    }
+
+    .main_menu > :nth-child(n) > :nth-child(n) > :nth-child(1),
+    .main_menu > :nth-child(n) > :nth-child(n) > :nth-child(2) {
+        width: 100%; /* 각 항목의 너비를 100%로 설정 */
+        margin: auto;
+    }
+}
+
+
+
+/* 메인 하단(방문신청예약) 영역 */
+.main_foot{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-top: 3px;
+	padding: 2px;
+	width: auto;
+	height: 400px;
+	font-weight: bold;
+    color: black;
+}
+.main_foot > :nth-child(n){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+}
+.main_foot > :nth-child(1){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 3px;
+	padding: 2px;
+	width: 1250px;
+	font-weight: bold;
+	font-size: 60px;
+	height: 20%;
+	border-radius: 12px;
+    color: whitesmoke;
+    border: 4px solid #ffad33; /* 진한 고급 빨강 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 더 깊은 그림자 */
+    /* background: linear-gradient(to bottom, #3e1c1c, #5c2b2b); 고급스러운 붉은 톤 그라데이션 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 미세한 그림자 추가 */
+}
+.main_foot > :nth-child(2){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-top: 15px;
+	padding: 2px;
+	width: auto;
+	font-weight: bold;
+	height: 75%;
+	border-radius: 12px;
+	gap: 10px;
+}
+.main_foot > :nth-child(2) > :nth-child(n) > :nth-child(n){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 430px;
+	height: 35px;
+	padding: 1px;
+	font-size: 18px;
+}
+
+#nameInput , #phoneInput{
+	border-top: 2.5px solid black;
+	border-right: 2.5px solid black;
+	border-left: 2.5px solid black;
+	border-radius: 10px 10px 0 0;
+    background-color: whitesmoke;
+    color: black;
+}
+#name , #phone{
+	border: 2.5px solid black;
+}
+#phoneInput{
+	border-radius: 0;
+}
+#phone{
+	border-radius: 0 0 10px 10px;
+}
+/* 반응형 스타일 - 화면 크기가 1024px 이하일 때 */
+@media (max-width: 1024px) {
+    /* 이름, 전화번호 입력 필드 너비를 100%로 설정 */
+    .main_foot > :nth-child(2) > div {
+        width: 90%; /* 필드 너비를 화면 크기에 맞게 조정 */
+    }
+
+    .main_foot > :nth-child(1) {
+        width: 100%; /* 제목 너비 조정 */
+        font-size: 40px; /* 작은 화면에서 글자 크기 줄이기 */
+    }
+
+    .main_foot > :nth-child(2) {
+        width: 100%;
+        gap: 7px;
+		margin-top: -8px;
+    }
+
+    /* 입력 필드 크기 조정 */
+    .main_foot > :nth-child(2) > :nth-child(n) > :nth-child(n) {
+        width: 100%; /* 100% 너비로 설정 */
+        font-size: 16px; /* 폰트 크기 조정 */
+    }
+
+    .reserve_btn {
+        width: 100%; /* 버튼 너비를 100%로 설정 */
+    }
+}
+
+/* 반응형 스타일 - 화면 크기가 600px 이하일 때 */
+@media (max-width: 600px) {
+    .main_foot {
+        margin-top: -35px;
+    }
+    .main_foot > :nth-child(1) {
+		width: 95%;
+        font-size: 26px; /* 더 작은 화면에서 폰트 크기 더 줄이기 */
+    }
+
+    /* 입력 필드 및 버튼 크기 최적화 */
+    .main_foot > :nth-child(2) > div {
+        width: 95%; /* 100% 너비로 설정 */
+		margin-left: -10px;
+    }
+
+    .main_foot > :nth-child(2) > :nth-child(n) > :nth-child(n) {
+        width: 100%; /* 입력 필드 너비 100%로 설정 */
+        font-size: 14px; /* 폰트 크기 더 작게 */
+    }
+
+    .reserve_btn {
+        width: 100%; /* 버튼도 너비 100%로 설정 */
+        font-size: 18px; /* 버튼 폰트 크기 조정 */
+    }
+}
+
+
+
+
+
+/* 개인정보 동의 체크박스 */
+.privacy_agree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: whitesmoke;
+}
+.privacy_agree a {
+    color: whitesmoke;
+    font-weight: bold;
+    margin-left: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.privacy_agree a:hover {
+    text-decoration: underline;
+}
+/* 예약하기 버튼 */
+.reserve_btn {
+    width: 75%;
+	height: 16%;
+    font-size: 20px;
+    font-weight: bold;
+    background: #ffad33;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal_content {
+    font-weight: bold;
+    background: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+.modal_content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.modal_content p, .modal_content ul {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+}
+.modal_content ul {
+    padding-left: 20px;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* 반응형 스타일 - 화면 크기가 1024px 이하일 때 */
+@media (max-width: 1024px) {
+    .reserve_btn {
+        width: 90%; /* 버튼 너비를 90%로 설정 */
+    }
+
+    .modal_content {
+		width: 60%;
+		margin: 0 auto;
+    }
+
+    .modal_content h2 {
+        font-size: 16px; /* 모달 제목 글자 크기 조정 */
+    }
+
+    .modal_content p, .modal_content ul {
+        font-size: 13px; /* 모달 내용 폰트 크기 조정 */
+    }
+
+    .modal_content ul {
+        padding-left: 15px; /* 왼쪽 패딩 줄이기 */
+    }
+
+    .close {
+        font-size: 18px; /* 닫기 버튼 크기 조정 */
+    }
+}
+
+/* 반응형 스타일 - 화면 크기가 600px 이하일 때 */
+@media (max-width: 600px) {
+    .reserve_btn {
+        width: 100%; /* 버튼 너비 100%로 설정 */
+        font-size: 19.5px; /* 버튼 폰트 크기 줄이기 */
+    }
+
+    .modal_content {
+		width: 60%;
+		margin: 0 auto;
+    }
+
+    .modal_content h2 {
+        font-size: 14px; /* 제목 글자 크기 줄이기 */
+    }
+
+    .modal_content p, .modal_content ul {
+        font-size: 12px; /* 폰트 크기 줄이기 */
+    }
+
+    .modal_content ul {
+        padding-left: 10px; /* 왼쪽 패딩 줄이기 */
+    }
+
+    .close {
+        font-size: 16px; /* 닫기 버튼 크기 줄이기 */
+    }
+}
+
+
+
+/* 메인 하단 이미지(광역위치도) 영역 */
+.main_foot_img{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 2px;
+	margin-top: 3px;
+	width: auto;
+	height: 650px;
+	gap: 1.5px;
+}
+.main_foot_img > :nth-child(1){
+	width: 1270px;
+	height: 92%;
+	padding: 3px;
+	border-radius: 12.5px;
+	cursor: pointer;
+}
+.main_foot_img > :nth-child(2){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: auto;
+	height: 4.5%;
+	padding: 1px;
+	font-size: 15px;
+	font-weight: bold;
+	color: gray;
+}
+
+/* 메인 하단 글씨 영역 */
+.main_foot_text{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: auto;
+	height: auto;
+	padding: 3px;
+	margin-top: 3px;
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 7px;
+	color: whitesmoke;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 은은한 그림자 효과 */
+}
+
+/* 하단 푸터(정보) 영역 */
+.foot_info{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	padding: 3px;
+	margin-top: 20px;
+	color: gray;
+	font-size: 15px;
+	gap: 5px;
+}
+
+/* 하단 푸터 전화/문자 영역 */
+.foot_callMsg{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 3px;
+	margin-top: 20px;
+	font-size: 30px;
+	font-weight: bold;
+	width: auto;
+	height: auto;
+	gap: 17.5px;
+}
+.foot_callMsg > :nth-child(n){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 33%;
+	height: auto;
+	cursor: pointer;
+	padding: 7.5px;
+	border-radius: 12px;
+	background-color: #ffad33;
+	color: black;
+}
+
+/* --------------------- 모바일 반응형 적용 --------------------- */
+@media screen and (max-width: 768px) {
+	/* 이미지 영역 컨테이너 높이 자동 조절 */
+	.main_foot_img {
+		height: auto; /* 고정 높이 대신 내용에 맞춰 자동 조절 */
+		padding: 5px; /* 모바일에서 여유 공간 추가 */
+        margin-top: -10px;
+	}
+
+	/* 이미지 크기 조절: 데스크탑 최대 크기는 유지하면서 화면에 맞게 축소 */
+	.main_foot_img > :nth-child(1) {
+		width: 100%;           /* 전체 너비 사용 */
+		max-width: 1270px;      /* 데스크탑 기준 최대 너비 유지 */
+		height: auto;          /* 비율에 맞춰 자동 조절 */
+	}
+
+	/* 이미지 하단 안내 글씨 크기 약간 축소 */
+	.main_foot_img > :nth-child(2) {
+		font-size: 13px;       /* 모바일에 맞게 폰트 크기 감소 */
+		padding: 2px;          /* 패딩 약간 조정 */
+	}
+
+	/* 메인 하단 글씨 영역 폰트 및 자간 축소 */
+	.main_foot_text {
+		font-size: 12.5px;       /* 폰트 크기 축소 */
+		letter-spacing: 1px;   /* 자간 축소 */
+		padding: 5px;
+	}
+
+	/* 푸터 정보 영역 폰트 크기 축소 */
+	.foot_info {
+		font-size: 11px;       /* 폰트 크기 축소 */
+		gap: 3px;             /* 간격 축소 */
+	}
+
+	/* 푸터 전화/문자 영역 폰트 크기 및 간격 축소 */
+	.foot_callMsg {
+		font-size: 25px;       /* 폰트 크기 축소 */
+		gap: 10px;            /* 간격 축소 */
+		margin-top: 15px;
+	}
+
+	/* 푸터 전화/문자 버튼의 너비 및 패딩 조절 */
+	.foot_callMsg > :nth-child(n) {
+		width: 45%;           /* 두 버튼이 모바일 화면에서 더 넓게 보이도록 조절 */
+		padding: 10px;        /* 패딩 조정 */
+	}
+}
+/* --------------------- 태블릿 반응형 적용 (769px ~ 1024px) --------------------- */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	/* 이미지 영역 컨테이너 높이 및 패딩 조절 */
+	.main_foot_img {
+		height: auto;         /* 내용에 따라 높이 자동 조절 */
+		padding: 5px;         /* 여유 공간 추가 */
+	}
+
+	/* 이미지 크기 조절: 데스크탑 기준 크기는 유지하되, 태블릿 화면에 맞게 조정 */
+	.main_foot_img > :nth-child(1) {
+		width: 100%;          /* 전체 너비 사용 */
+		max-width: 1000px;     /* 태블릿에 맞게 최대 너비 조절 (데스크탑보다 작게) */
+		height: auto;         /* 비율 유지 */
+	}
+
+	/* 이미지 하단 안내 글씨 크기 및 패딩 조절 */
+	.main_foot_img > :nth-child(2) {
+		font-size: 14px;      /* 폰트 크기 약간 축소 */
+		padding: 3px;
+	}
+
+	/* 메인 하단 글씨 영역 폰트 및 자간 조절 */
+	.main_foot_text {
+		font-size: 20px;      /* 폰트 크기 약간 축소 */
+		letter-spacing: 6px;  /* 자간 조절 */
+		padding: 5px;
+	}
+
+	/* 푸터 정보 영역 폰트 크기 및 간격 조절 */
+	.foot_info {
+		font-size: 14px;      /* 폰트 크기 조절 */
+		gap: 4px;            /* 간격 축소 */
+	}
+
+	/* 푸터 전화/문자 영역 폰트 크기 및 간격 조절 */
+	.foot_callMsg {
+		font-size: 28px;      /* 폰트 크기 약간 축소 */
+		gap: 15px;           /* 간격 조절 */
+		margin-top: 18px;
+	}
+
+	/* 푸터 전화/문자 버튼 너비 및 패딩 조절 */
+	.foot_callMsg > :nth-child(n) {
+		width: 40%;           /* 태블릿 화면에 맞게 너비 조절 */
+		padding: 10px;
+	}
+}
